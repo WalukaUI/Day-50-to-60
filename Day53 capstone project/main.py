@@ -14,4 +14,8 @@ for post in  posts:
     print(address.strip())
     href = post.find(name="a", class_="StyledPropertyCardDataArea-anchor", href=True)['href']
     print(href)
+    price = post.find(name="span", class_="PropertyCardWrapper__StyledPriceLine").text
+    num_cost = "".join([num for num in price.split(" ")[0] if num.isdigit()])
+    print(num_cost)
+
 
