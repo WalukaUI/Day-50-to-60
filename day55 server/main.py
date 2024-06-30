@@ -19,5 +19,5 @@ def num_test(num):
         return "<h1 style='color: green'>Wooo Correct.......</h1>"
 
 
-if __name__ == "__server__":
+if __name__ == "__main__":
     app.run(debug=True)
