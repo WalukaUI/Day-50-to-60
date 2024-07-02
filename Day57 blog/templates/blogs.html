@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% for post in all_posts %}
+    {% if post["title"] == "The Life of Cactus"  %}
+    <h1>{{post["title"]}}</h1>
+    <h3>{{post["subtitle"]}}</h3>
+    {% endif %}
+    {% endfor %}
+</head>
+<body>
+
+</body>
+</html>

@@ -4,12 +4,14 @@ import requests
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/posts")
 def hello_world():
-    return render_template("index.html")
+    response = requests.get("https://api.npoint.io/c790b4d5cab58020d391")
+    posts = response.json()
+    return render_template("blogs.html", all_posts=posts)
 
 
-@app.route("/<name>")
+@app.route("/guess/<name>")
 def hello_name(name):
     ages = requests.get(f"https://api.agify.io/?name={name}")
     res = ages.json()
