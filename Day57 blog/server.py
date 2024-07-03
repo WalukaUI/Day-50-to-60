@@ -13,7 +13,7 @@ def hello_world():
 
 @app.route("/posts/<num>")
 def get_anchor(num):
-    response = requests.get(f"https://api.npoint.io/c790b4d5cab58020d391/{num}")
+    response = requests.get(f"https://api.npoint.io/c790b4d5cab58020d391/{int(num)-1}")
     post = response.json()
     return render_template("blog.html", post=post["title"], sub=post["subtitle"])
 

@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
     {% for post in all_posts %}
-    {% if post["id"] == 2:  %}
-    <h1>{{post["title"]}}</h1>
-    <h3>{{post["subtitle"]}}</h3>
+    {% if post["id"] == 1:  %}
+        <h1>{{post["title"]}}</h1>
+        <h3>{{post["subtitle"]}}</h3>
+        <a href="{{ url_for('hello_world') }}" target="_blank">Go home</a>
+        <a href="{{ url_for('get_anchor', num=post['id']) }}" target="_blank">Go to blog</a>
     {% else: %}
+        <a href="{{ url_for('hello_world') }}" target="_blank">Go home</a>
+        <a href="{{ url_for('get_anchor', num=(post['id'])) }}" target="_blank">Go to blog</a>
     {% endif %}
      <h1>select diff number</h1>
     {% endfor %}
