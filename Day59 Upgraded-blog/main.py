@@ -21,9 +21,9 @@ def get_about():
 
 @app.route("/post/<id_num>")
 def get_post(id_num):
-    res = requests.get(f"https://api.npoint.io/80e17894fb83a9e27424/{int(id_num)}").json()
+    res = requests.get(f"https://api.npoint.io/80e17894fb83a9e27424/{int(id_num)-1}").json()
     print(res)
-    return render_template("post.html")
+    return render_template("post.html", title=res["title"], body=res["body"], subs=res["subtitle"])
 
 
 if __name__ == "__main__":
